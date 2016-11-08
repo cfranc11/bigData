@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+
+<!--
+	This file is rendered by express.js, when the rurl /chat/123456 is visited in a browser.
+	It includes jQuery, socket.io.js (it is automatically served by the socket.io library),
+	and a few more JavaScript files that you should check out.
+-->
+
+<html>
+
+<head>
+
+	<title>DATASET GUTENBERG</title>
+
+	<link type="text/css" rel="stylesheet" href="../css/stylesheet.css" />
+	<link href="http://fonts.googleapis.com/css?family=Open+Sans Condensed:300italic,300,700" rel="stylesheet" type="text/css">
+
+
+</head>
+
+<body>
+
+	<header class="banner">
+
+		<h1 class="bannertext">
+			<a  id="logo"><span> DATASET GUTENBERG</span></a>
+		</h1>
+
+	</header>
+
+
+	<section class="section">
+
+		<!-- These elements are displayed as white info cards in the middle of the screen -->
+
+		<div class="connected">
+
+			<img src="../img/searchGoogle.png" id="creatorImage" />
+
+			<div class="infoConnected">
+				<h2>Búsqueda palabra</h2>
+				<br/>
+
+				<form class="loginForm">
+					<input type="text" id="yourName" placeholder="Palabra a buscar" /><br/>
+					<!--<input type="text" id="yourEmail" placeholder="formatoEmail" /><br/>-->
+					<input type="submit" id="yourEnter" value="Buscar" />
+				</form>
+
+			</div>
+
+		</div>
+
+		<div class="personinside">
+
+			<img src="../img/unnamed.jpg" id="ownerImage" />
+
+			<div class="infoInside">
+				<h2>Chat con <span class="nickname-chat"></span></h2>
+				<br/>
+
+				<form class="loginForm">
+					<input type="text" id="hisName" placeholder="Nombre de usuario" /><br/>
+					<input type="text" id="hisEmail" placeholder="Email" /><br/>
+					<input type="submit" id="hisEnter" value="CHAT" />
+				</form>
+
+			</div>
+
+		</div>
+
+																			<!-- IMPORTANTE -->
+		<div class="invite-textfield">
+
+			<h2>BÚSQUEDA ÍNDICE INVERTIDO</h2>
+			<h5>Documentos que contienen la palabra</h5>
+
+
+			<div><a href="http://localhost:8080/dataset/10293-8.txt">10293-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/10293.txt">10293.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/10506-8.txt">10506-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/10506.txt">10506.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/10814-8.txt">10814-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/10814.txt">10814.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/10821-8.txt">10821-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/10821.txt">10821.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/10822-8.txt">10822-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/10822.txt">10822.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/10825-8.txt">10825-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/10909-8.txt">10909-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/10909.txt">10909.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/11047-8.txt">11047-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/11047.txt">11047.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/11070-8.txt">11070-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/11070.txt">11070.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/11071-8.txt">11071-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/11071.txt">11071.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/11081-8.txt">11081-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/11081.txt">11081.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/11302-8.txt">11302-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/11529-8.txt">11529-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/11529.txt">11529.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/11598-8.txt">11598-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/11598.txt">11598.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/11657-8.txt">11657-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/11657.txt">11657.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/11663-8.txt">11663-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/11663.txt">11663.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/11669-8.txt">11669-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/11669.txt">11669.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/12274-8.txt">12274-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/12275-8.txt">12275-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/12276-8.txt">12276-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/12368-8.txt">12368-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/12368.txt">12368.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/12435-8.txt">12435-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/12435.txt">12435.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/12457-8.txt">12457-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/12457.txt">12457.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/12500-8.txt">12500-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/12501-8.txt">12501-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/12502-8.txt">12502-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/12503-8.txt">12503-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/12627-8.txt">12627-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/12627.txt">12627.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/12840-8.txt">12840-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/12840.txt">12840.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/12848-8.txt">12848-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/13210-8.txt">13210-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/13210.txt">13210.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/13216-8.txt">13216-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/13216.txt">13216.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/13264-8.txt">13264-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/13264.txt">13264.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/13458-8.txt">13458-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/13479-8.txt">13479-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/13479.txt">13479.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/13492-8.txt">13492-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/13492.txt">13492.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/13507-8.txt">13507-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/13507.txt">13507.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/13516-8.txt">13516-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/13516.txt">13516.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/13519-8.txt">13519-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/13519.txt">13519.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/13608-8.txt">13608-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/13608.txt">13608.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/13904-8.txt">13904-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/14235-8.txt">14235-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/14236-8.txt">14236-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/14307-8.txt">14307-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/14308-8.txt">14308-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/14311-8.txt">14311-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/14318-8.txt">14318-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/14329-8.txt">14329-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/14722-8.txt">14722-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/14765-8.txt">14765-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/14795-8.txt">14795-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/14796-8.txt">14796-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/14839-8.txt">14839-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/14944-8.txt">14944-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/14995-8.txt">14995-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/15027-8.txt">15027-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/15046-8.txt">15046-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/15054-8.txt">15054-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/15066-8.txt">15066-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/15115-8.txt">15115-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/15127-8.txt">15127-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/15127.txt">15127.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/15206-8.txt">15206-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/15334-8.txt">15334-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/15353-8.txt">15353-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/15353.txt">15353.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/15421-8.txt">15421-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/15531-8.txt">15531-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/15532-8.txt">15532-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/15532.txt">15532.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/15633-8.txt">15633-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/15725-8.txt">15725-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/15725.txt">15725.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/15757-8.txt">15757-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/15781-8.txt">15781-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/16059-8.txt">16059-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/16059.txt">16059.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/16082-8.txt">16082-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/16105-8.txt">16105-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/16109-8.txt">16109-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/16110-8.txt">16110-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/16119-8.txt">16119-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/16119.txt">16119.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/16132-8.txt">16132-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/16149-8.txt">16149-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/16201-8.txt">16201-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/16319-8.txt">16319-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/16372-8.txt">16372-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/16413-8.txt">16413-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/16484-8.txt">16484-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/16625-8.txt">16625-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/16670-8.txt">16670-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/16961-8.txt">16961-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/17013-8.txt">17013-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/17073-8.txt">17073-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/17223-8.txt">17223-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/17317-8.txt">17317-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/17338-8.txt">17338-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/17340-8.txt">17340-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/17341-8.txt">17341-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/17406-8.txt">17406-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/17430-8.txt">17430-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/17443-8.txt">17443-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/17491-8.txt">17491-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/17974-8.txt">17974-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/18005-8.txt">18005-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/18157-8.txt">18157-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/18166-8.txt">18166-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/18228-8.txt">18228-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/18289-8.txt">18289-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/18580-8.txt">18580-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/18600-8.txt">18600-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/18723-8.txt">18723-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/18783-8.txt">18783-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/18784-8.txt">18784-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/18798-8.txt">18798-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/19106-8.txt">19106-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/19496-8.txt">19496-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/19543-8.txt">19543-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/19643-8.txt">19643-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/19847-8.txt">19847-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/19898-8.txt">19898-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/2000-8.txt">2000-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/20011-8.txt">20011-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/20099-8.txt">20099-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/20159-0.txt">20159-0.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/20159-8.txt">20159-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/20159.txt">20159.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/20401-8.txt">20401-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/20738-8.txt">20738-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/20852-8.txt">20852-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/20855-8.txt">20855-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/20930-8.txt">20930-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/21282-8.txt">21282-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/21651-8.txt">21651-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/21831-8.txt">21831-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/21906-8.txt">21906-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/22065-8.txt">22065-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/22092-8.txt">22092-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/22899-8.txt">22899-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/22909-8.txt">22909-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/22975-8.txt">22975-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/23035-8.txt">23035-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/23206-8.txt">23206-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/23236-8.txt">23236-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/23239-8.txt">23239-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/23600-8.txt">23600-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/23617-8.txt">23617-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/23957-8.txt">23957-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/24031-8.txt">24031-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/24127-8.txt">24127-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/24208-8.txt">24208-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/24250-8.txt">24250-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/24466-8.txt">24466-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/24536-8.txt">24536-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/24601-8.txt">24601-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/24801-8.txt">24801-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/24802-8.txt">24802-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/24823-8.txt">24823-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/24917-8.txt">24917-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/24925-8.txt">24925-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/24988-8.txt">24988-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/25054-8.txt">25054-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/25074-8.txt">25074-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/25255-8.txt">25255-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/25317-8.txt">25317-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/25320-8.txt">25320-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/25640-8.txt">25640-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/25671-8.txt">25671-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/25687-8.txt">25687-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/25705-8.txt">25705-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/25777-8.txt">25777-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/25807-8.txt">25807-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/25812-8.txt">25812-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/25956-8.txt">25956-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/25988-8.txt">25988-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/26028-8.txt">26028-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/26078-8.txt">26078-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/26231-8.txt">26231-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/26284-8.txt">26284-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/26314-8.txt">26314-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/26404-8.txt">26404-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/26506-8.txt">26506-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/26508-8.txt">26508-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/26545-8.txt">26545-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/26655-8.txt">26655-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/26756-8.txt">26756-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/26771-8.txt">26771-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/26845-8.txt">26845-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/26929-8.txt">26929-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/26947-8.txt">26947-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/26983-8.txt">26983-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/27034-0.txt">27034-0.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/27034-8.txt">27034-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/27035-0.txt">27035-0.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/27035-8.txt">27035-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/27048-0.txt">27048-0.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/27048-8.txt">27048-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/27064-8.txt">27064-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/27100-8.txt">27100-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/27121-8.txt">27121-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/27167-8.txt">27167-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/27214-8.txt">27214-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/27295-8.txt">27295-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/27326-8.txt">27326-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/27695-8.txt">27695-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/27736-8.txt">27736-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/27738-8.txt">27738-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/27757-8.txt">27757-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/27900-8.txt">27900-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/28002-8.txt">28002-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/28106-8.txt">28106-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/28212-8.txt">28212-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/28281-8.txt">28281-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/28408-8.txt">28408-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/28430-8.txt">28430-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/28542-8.txt">28542-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/28592-8.txt">28592-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/28904-8.txt">28904-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/28927-8.txt">28927-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/28929-8.txt">28929-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/28967-8.txt">28967-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/28978-8.txt">28978-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/29014-8.txt">29014-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/29061-8.txt">29061-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/29078-8.txt">29078-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/29105-8.txt">29105-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/29137-8.txt">29137-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/29301-8.txt">29301-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/29497-8.txt">29497-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/29506-8.txt">29506-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/29511-8.txt">29511-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/29576-8.txt">29576-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/29610-8.txt">29610-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/29640-8.txt">29640-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/29663-8.txt">29663-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/29677-8.txt">29677-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/29703-8.txt">29703-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/29706-8.txt">29706-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/29731-8.txt">29731-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/29770-8.txt">29770-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/29799-8.txt">29799-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/29803-0.txt">29803-0.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/29803-8.txt">29803-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/29830-8.txt">29830-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/29831-8.txt">29831-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/29901-8.txt">29901-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/29920-8.txt">29920-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/30052-8.txt">30052-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/30053-8.txt">30053-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/30122-8.txt">30122-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/30213-8.txt">30213-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/30275-8.txt">30275-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/30280-8.txt">30280-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/30425-8.txt">30425-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/30535-8.txt">30535-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/30716-0.txt">30716-0.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/30716-8.txt">30716-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/30892-8.txt">30892-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/30903-8.txt">30903-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/30986-8.txt">30986-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/31013-8.txt">31013-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/31066-8.txt">31066-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/31464-8.txt">31464-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/31465-8.txt">31465-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/31541-8.txt">31541-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/31544-8.txt">31544-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/31613-0.txt">31613-0.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/31613-8.txt">31613-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/31633-0.txt">31633-0.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/31633-8.txt">31633-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/31637-0.txt">31637-0.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/31637-8.txt">31637-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/31707-8.txt">31707-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/31724-8.txt">31724-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/320-8.txt">320-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/32235-8.txt">32235-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/32315-8.txt">32315-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/32364-8.txt">32364-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/33227-0.txt">33227-0.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/33227-8.txt">33227-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/33267-8.txt">33267-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/33275-8.txt">33275-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/33406-8.txt">33406-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/33461-8.txt">33461-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/33474-8.txt">33474-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/33690-0.txt">33690-0.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/33690-8.txt">33690-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/33809-0.txt">33809-0.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/33809-8.txt">33809-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/33885-8.txt">33885-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/34091-8.txt">34091-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/34565-8.txt">34565-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/34731-0.txt">34731-0.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/34731-8.txt">34731-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/34731.txt">34731.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/35407-8.txt">35407-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/35882-0.txt">35882-0.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/35882-8.txt">35882-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/35905-8.txt">35905-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/36253-0.txt">36253-0.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/36253-8.txt">36253-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/36318-8.txt">36318-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/36453-8.txt">36453-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/36546-8.txt">36546-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/36558-8.txt">36558-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/36573-8.txt">36573-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/36805-8.txt">36805-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/36940-0.txt">36940-0.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/36940-8.txt">36940-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/36986-0.txt">36986-0.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/36986-8.txt">36986-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/36990-8.txt">36990-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/37067-0.txt">37067-0.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/37067-8.txt">37067-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/37095-0.txt">37095-0.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/37095-8.txt">37095-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/37139-8.txt">37139-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/37382-8.txt">37382-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/37590-8.txt">37590-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/37637-8.txt">37637-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/37747-8.txt">37747-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/38124-8.txt">38124-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/38814-8.txt">38814-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/38836-8.txt">38836-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/38885-8.txt">38885-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/39113-8.txt">39113-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/39209-8.txt">39209-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/39312-8.txt">39312-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/39444-8.txt">39444-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/39446-8.txt">39446-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/39579-8.txt">39579-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/39613-8.txt">39613-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/39647-8.txt">39647-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/39930-8.txt">39930-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/39947-8.txt">39947-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/39948-8.txt">39948-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/39990-8.txt">39990-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/40066-8.txt">40066-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/40182-8.txt">40182-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/40358-8.txt">40358-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/40420-0.txt">40420-0.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/40420-8.txt">40420-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/40544-8.txt">40544-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/40595-8.txt">40595-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/40724-8.txt">40724-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/40810-8.txt">40810-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/40827-8.txt">40827-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/41106-8.txt">41106-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/41161-8.txt">41161-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/41337-8.txt">41337-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/41575-8.txt">41575-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/41746-8.txt">41746-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/41789-8.txt">41789-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/41842-0.txt">41842-0.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/41853-8.txt">41853-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/41884-8.txt">41884-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/42023-8.txt">42023-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/42065-8.txt">42065-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/42321-8.txt">42321-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/42323-8.txt">42323-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/42376-8.txt">42376-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/42424-8.txt">42424-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/42440-8.txt">42440-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/42456-8.txt">42456-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/42642-8.txt">42642-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/42705-8.txt">42705-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/42727-8.txt">42727-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/43017-8.txt">43017-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/43030-8.txt">43030-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/43033-8.txt">43033-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/43276-8.txt">43276-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/43400-8.txt">43400-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/43401-8.txt">43401-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/43432-8.txt">43432-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/43493-8.txt">43493-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/43861-8.txt">43861-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/43950-8.txt">43950-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/44112-8.txt">44112-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/44120-8.txt">44120-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/44173-8.txt">44173-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/44305-8.txt">44305-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/44309-8.txt">44309-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/44358-8.txt">44358-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/44512-8.txt">44512-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/44529-8.txt">44529-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/44584-8.txt">44584-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/44918-8.txt">44918-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/45151-8.txt">45151-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/45171-8.txt">45171-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/45180-8.txt">45180-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/45183-8.txt">45183-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/45250-8.txt">45250-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/45438-8.txt">45438-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/45508-8.txt">45508-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/45770-8.txt">45770-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/45829-8.txt">45829-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/45830-8.txt">45830-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/45831-8.txt">45831-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/45832-8.txt">45832-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/45833-8.txt">45833-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/45834-8.txt">45834-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/45835-8.txt">45835-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/45836-8.txt">45836-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/45837-8.txt">45837-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/45945-8.txt">45945-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/46000-8.txt">46000-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/46182-8.txt">46182-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/46196-8.txt">46196-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/46201-8.txt">46201-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/46246-0.txt">46246-0.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/46246-8.txt">46246-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/46265-8.txt">46265-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/46279-8.txt">46279-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/46496-8.txt">46496-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/46771-8.txt">46771-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/47052-8.txt">47052-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/47057-8.txt">47057-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/47092-8.txt">47092-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/5201-8.txt">5201-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/5877-0.txt">5877-0.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/5878-8.txt">5878-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/5879-8.txt">5879-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/5880-8.txt">5880-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/5881-8.txt">5881-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/5985-8.txt">5985-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/6528-0.txt">6528-0.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/7109-8.txt">7109-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/8870-8.txt">8870-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/9890-8.txt">9890-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/9895-8.txt">9895-8.txt</a></div>
+			<div><a href="http://localhost:8080/dataset/9980-8.txt">9980-8.txt</a></div>
+
+
+
+			<div class="link">
+				<a title="Invite a friend" href="http://localhost:8080/gutenberg.txt" id="link"></a>
+			</div>
+
+		</div>
+
+		<div class="left">
+
+			<img src="../img/unnamed.jpg" id="leftImage" />
+
+			<div class="info">
+				<h2><span class="nickname-left"></span> Se ha salido del chat</h2>
+				<h5>Invite a otro usuario</h5>
+			</div>
+
+		</div>
+
+		<div class="toomanypeople">
+
+			<h2>Chat cerrado, ocupado!</h2>
+			<h5>Se encuentran 2 personas en esta sala, <a title="New Room" href="/create" id="room">crear nueva sala</a>?</h5>
+
+		</div>
+
+		<div class="nomessages">
+
+			<img src="../img/unnamed.jpg" id="noMessagesImage" />
+
+			<div class="info">
+				<h2>Estas chateando con:  <span class="nickname-chat"></span>.</h2>
+				<h5>Envía un mensaje</h5>
+			</div>
+
+		</div>
+
+		<div class="chatscreen">
+
+			<ul class="chats">
+				<!-- The chat messages will go here -->
+			</ul>
+
+		</div>
+
+	</section>
+
+	<footer>
+
+		<form id="chatform">
+
+			<textarea id="message" placeholder="Escribir aquí.."></textarea>
+			<input type="submit" id="submit" value="ENVIAR"/>
+
+		</form>
+
+	</footer>
+
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="../js/moment.min.js"></script>
+	<script src="/socket.io/socket.io.js"></script>
+	<script src="../js/chat.js"></script>
+
+</body>
+
+</html>
